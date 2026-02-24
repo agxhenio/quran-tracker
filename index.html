@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hatme Tracker — Ramazan 2026</title>
+
+    <!-- Lidh CSS-në (skedar i veçantë) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="moon">🌙</div>
+        <h1 class="title">📖 Hatme Tracker</h1>
+        <p class="subtitle">Ramazan 2026 — Sfida 30 Ditore</p>
+    </header>
+
+    <!-- ========== STATISTIKAT KRYESORE ========== -->
+    <section class="stats-bar">
+        <div class="stat-item">
+            <span class="stat-number" id="completedJuz">0</span>
+            <span class="stat-label">Xhuze</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="completedPages">0</span>
+            <span class="stat-label">Faqe</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="streakDays">0</span>
+            <span class="stat-label">🔥 Ditë radhazi</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" id="percentage">0%</span>
+            <span class="stat-label">Përfunduar</span>
+        </div>
+    </section>
+
+    <!-- ========== SHIRITI I PROGRESIT TOTAL ========== -->
+    <section class="progress-section">
+        <div class="progress-header">
+            <span>Progresi i Hatmes</span>
+            <span id="progressLabel">0 / 30 Xhuze</span>
+        </div>
+        <div class="progress-track">
+            <div class="progress-fill" id="mainProgress"></div>
+        </div>
+    </section>
+
+    <!-- ========== THËNIA MOTIVUESE ========== -->
+    <section class="quote-section" id="quoteSection">
+        <div class="quote-icon">💎</div>
+        <p class="quote-text" id="quoteText">
+            "Lexoni Kur'anin, sepse ai do vijë Ditën e Gjykimit 
+            si ndërmjetësues për lexuesit e tij." — Profeti ﷺ (Muslim)
+        </p>
+    </section>
+
+    <!-- ========== NIVELI / RANKIMI ========== -->
+    <section class="rank-section">
+        <div class="rank-badge" id="rankBadge">🌱</div>
+        <div class="rank-info">
+            <span class="rank-title" id="rankTitle">Fillestar</span>
+            <span class="rank-next" id="rankNext">
+                Lexo 3 xhuze për nivelin tjetër
+            </span>
+        </div>
+        <div class="xp-bar">
+            <div class="xp-fill" id="xpFill"></div>
+        </div>
+    </section>
+
+    <!-- ========== LISTA E 30 XHUZEVE ========== -->
+    <section class="juz-section">
+        <h2 class="section-title">📚 30 Xhuzet e Kur'anit</h2>
+
+        <!-- Filtrat -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterJuz('all')">
+                Të gjitha
+            </button>
+            <button class="filter-btn" onclick="filterJuz('unread')">
+                ⬜ Pa lexuar
+            </button>
+            <button class="filter-btn" onclick="filterJuz('current')">
+                📖 Duke lexuar
+            </button>
+            <button class="filter-btn" onclick="filterJuz('read')">
+                ✅ Lexuar
+            </button>
+        </div>
+
+        <!-- Lista (gjenerohet nga JavaScript) -->
+        <div class="juz-grid" id="juzGrid"></div>
+                <!-- Lista (gjenerohet nga JavaScript) -->
+        <div class="juz-grid" id="juzGrid"></div>
+
+        <!-- SHTESË E RE: Paneli i bookmark-ut (popup) -->
+        <div class="bookmark-overlay" id="bookmarkOverlay">
+            <div class="bookmark-panel" id="bookmarkPanel">
+
+                <!-- Butoni X për mbyllje -->
+                <button class="bookmark-close" onclick="closeBookmark()">✕</button>
+
+                <!-- Titulli i xhuzit -->
+                <h3 class="bookmark-title" id="bookmarkTitle">Xhuzi 1</h3>
+                <p class="bookmark-subtitle" id="bookmarkSubtitle">El-Fatiha / El-Bekare</p>
+
+                <!-- Forma e shënimit -->
+                <div class="bookmark-form">
+
+                    <!-- Fusha: Emri i sures -->
+                    <div class="bookmark-field">
+                        <label class="bookmark-label">📖 Surja ku ndodhem</label>
+                        <input
+                            type="text"
+                            class="bookmark-input"
+                            id="bookmarkSurah"
+                            placeholder="p.sh. Ali Imran"
+                        >
+                    </div>
+
+                    <!-- Fusha: Numri i ajetit -->
+                    <div class="bookmark-field">
+                        <label class="bookmark-label">📌 Ajeti ku e lashë</label>
+                        <input
+                            type="number"
+                            class="bookmark-input"
+                            id="bookmarkAyah"
+                            placeholder="p.sh. 145"
+                            min="1"
+                        >
+                    </div>
+
+                    <!-- Fusha: Faqja ku ndodhem -->
+                    <div class="bookmark-field">
+                        <label class="bookmark-label">📄 Faqja (1-20)</label>
+                        <input
+                            type="range"
+                            class="bookmark-slider"
+                            id="bookmarkPage"
+                            min="0"
+                            max="20"
+                            value="0"
+                            oninput="updatePageLabel(this.value)"
+                        >
+                        <span class="page-label" id="pageLabel">0 / 20 faqe</span>
+                    </div>
+
+                    <!-- Shënime shtesë -->
+                    <div class="bookmark-field">
+                        <label class="bookmark-label">📝 Shënim (opsional)</label>
+                        <input
+                            type="text"
+                            class="bookmark-input"
+                            id="bookmarkNote"
+                            placeholder="p.sh. Ajeti shumë i bukur..."
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Butonat e veprimit -->
+                <div class="bookmark-actions">
+                    <button class="bookmark-btn btn-save" onclick="saveBookmark()">
+                        💾 Ruaj shënimin
+                    </button>
+                    <button class="bookmark-btn btn-reading" onclick="markAsReading()">
+                        📖 Duke lexuar
+                    </button>
+                    <button class="bookmark-btn btn-done" onclick="markAsDone()">
+                        ✅ E përfundova
+                    </button>
+                </div>
+
+                <!-- Shfaq shënimin e fundit -->
+                <div class="bookmark-saved" id="bookmarkSaved"></div>
+
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- ========== ARRITJET / ACHIEVEMENTS ========== -->
+    <section class="achievements-section">
+        <h2 class="section-title">🏆 Arritjet</h2>
+        <div class="achievements-grid" id="achievementsGrid"></div>
+    </section>
+
+    <!-- ========== PLANI DITOR ========== -->
+    <section class="daily-section">
+        <h2 class="section-title">📅 Plani i Sotëm</h2>
+        <div class="daily-plan" id="dailyPlan"></div>
+    </section>
+
+    <!-- ========== BUTONI I RESETIMIT ========== -->
+    <section class="reset-section">
+        <button class="reset-btn" onclick="resetAll()">
+            🔄 Fillo Hatmen nga fillimi
+        </button>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <p>Ndërtuar me ❤️ për Ramazanin 2026</p>
+        <p class="footer-dua">
+            رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ
+        </p>
+        <p class="footer-translation">
+            "Zoti ynë, prano prej nesh, Ti je Dëgjuesi, i Gjithëdijshmi"
+        </p>
+    </footer>
+
+    <!-- ========== POPUP I FESTIMIT ========== -->
+    <div class="celebration-overlay" id="celebrationOverlay">
+        <div class="celebration-content">
+            <div class="celebration-emoji" id="celebrationEmoji">🎉</div>
+            <h2 class="celebration-title" id="celebrationTitle"></h2>
+            <p class="celebration-text" id="celebrationText"></p>
+            <button class="celebration-close" onclick="closeCelebration()">
+                Vazhdo ➜
+            </button>
+        </div>
+    </div>
+
+    <!-- Lidh JavaScript-in (skedar i veçantë) -->
+    <script src="script.js"></script>
+
+</body>
+</html>
