@@ -1,5 +1,5 @@
 /* ============================================
-   RESETI BAZË — Heq stilet e parazgjedhura
+   RESET
    ============================================ */
 * {
     margin: 0;
@@ -8,7 +8,7 @@
 }
 
 /* ============================================
-   TRUPI I FAQES
+   BODY
    ============================================ */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,7 +20,7 @@ body {
 }
 
 /* ============================================
-   HEADER — Kreu i faqes
+   HEADER
    ============================================ */
 .header {
     text-align: center;
@@ -34,7 +34,7 @@ body {
 
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50%      { transform: translateY(-10px); }
+    50% { transform: translateY(-10px); }
 }
 
 .title {
@@ -52,7 +52,7 @@ body {
 }
 
 /* ============================================
-   STATISTIKAT — 4 kutitë lart
+   STATS BAR
    ============================================ */
 .stats-bar {
     display: grid;
@@ -87,7 +87,7 @@ body {
 }
 
 /* ============================================
-   SHIRITI I PROGRESIT
+   PROGRESS BAR
    ============================================ */
 .progress-section {
     max-width: 500px;
@@ -119,45 +119,33 @@ body {
     position: relative;
 }
 
-/* Efekti i shkëlqimit në progres */
 .progress-fill::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
     animation: shimmer 2s infinite;
 }
 
 @keyframes shimmer {
-    0%   { transform: translateX(-100%); }
+    0% { transform: translateX(-100%); }
     100% { transform: translateX(100%); }
 }
 
 /* ============================================
-   THËNIA MOTIVUESE
+   QUOTE
    ============================================ */
 .quote-section {
     max-width: 500px;
     margin: 20px auto;
     padding: 18px;
-    background: linear-gradient(135deg, rgba(255, 213, 79, 0.08), rgba(76, 175, 80, 0.08));
-    border: 1px solid rgba(255, 213, 79, 0.15);
+    background: linear-gradient(135deg, rgba(255,213,79,0.08), rgba(76,175,80,0.08));
+    border: 1px solid rgba(255,213,79,0.15);
     border-radius: 14px;
     text-align: center;
 }
 
-.quote-icon {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-}
+.quote-icon { font-size: 1.5rem; margin-bottom: 8px; }
 
 .quote-text {
     font-size: 0.9rem;
@@ -167,14 +155,14 @@ body {
 }
 
 /* ============================================
-   NIVELI / RANKIMI
+   RANK
    ============================================ */
 .rank-section {
     max-width: 500px;
     margin: 15px auto;
     padding: 15px 18px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -182,34 +170,15 @@ body {
     flex-wrap: wrap;
 }
 
-.rank-badge {
-    font-size: 2.2rem;
-    min-width: 50px;
-    text-align: center;
-}
-
-.rank-info {
-    flex: 1;
-}
-
-.rank-title {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffd54f;
-}
-
-.rank-next {
-    display: block;
-    font-size: 0.75rem;
-    color: #888;
-    margin-top: 2px;
-}
+.rank-badge { font-size: 2.2rem; min-width: 50px; text-align: center; }
+.rank-info { flex: 1; }
+.rank-title { display: block; font-size: 1.1rem; font-weight: 700; color: #ffd54f; }
+.rank-next { display: block; font-size: 0.75rem; color: #888; margin-top: 2px; }
 
 .xp-bar {
     width: 100%;
     height: 6px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -223,7 +192,7 @@ body {
 }
 
 /* ============================================
-   SEKSIONI I XHUZEVE — Titulli
+   SECTION TITLES
    ============================================ */
 .section-title {
     text-align: center;
@@ -233,7 +202,7 @@ body {
 }
 
 /* ============================================
-   FILTRAT
+   FILTERS
    ============================================ */
 .filters {
     display: flex;
@@ -245,8 +214,8 @@ body {
 
 .filter-btn {
     padding: 7px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
     color: #bbb;
     border-radius: 20px;
     cursor: pointer;
@@ -254,18 +223,16 @@ body {
     transition: all 0.3s ease;
 }
 
-.filter-btn:hover {
-    background: rgba(255, 255, 255, 0.12);
-}
+.filter-btn:hover { background: rgba(255,255,255,0.12); }
 
 .filter-btn.active {
-    background: rgba(255, 213, 79, 0.15);
+    background: rgba(255,213,79,0.15);
     border-color: #ffd54f;
     color: #ffd54f;
 }
 
 /* ============================================
-   GRIDI I XHUZEVE — 30 kutitë
+   JUZ GRID
    ============================================ */
 .juz-grid {
     display: grid;
@@ -277,91 +244,125 @@ body {
 
 .juz-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 12px 15px;
+    padding: 14px 15px;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
 }
 
-/* Gjendjet e ngjyrave */
 .juz-card.unread {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .juz-card.current {
-    background: rgba(255, 213, 79, 0.1);
-    border: 1px solid rgba(255, 213, 79, 0.3);
+    background: rgba(255,213,79,0.1);
+    border: 1px solid rgba(255,213,79,0.3);
 }
 
 .juz-card.read {
-    background: rgba(76, 175, 80, 0.12);
-    border: 1px solid rgba(76, 175, 80, 0.3);
+    background: rgba(76,175,80,0.12);
+    border: 1px solid rgba(76,175,80,0.3);
 }
 
 .juz-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.juz-card.read:hover {
-    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .juz-left {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
+    flex: 1;
+    min-width: 0;
 }
 
 .juz-number {
     width: 32px;
     height: 32px;
+    min-width: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.8rem;
     font-weight: 700;
-}
-
-.juz-card.unread .juz-number {
-    background: rgba(255, 255, 255, 0.08);
-    color: #888;
-}
-
-.juz-card.current .juz-number {
-    background: rgba(255, 213, 79, 0.2);
-    color: #ffd54f;
-}
-
-.juz-card.read .juz-number {
-    background: rgba(76, 175, 80, 0.25);
-    color: #69f0ae;
-}
-
-.juz-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.juz-pages {
-    font-size: 0.75rem;
-    color: #777;
     margin-top: 2px;
 }
 
-.juz-card.read .juz-pages { color: #81c784; }
+.juz-card.unread .juz-number { background: rgba(255,255,255,0.08); color: #888; }
+.juz-card.current .juz-number { background: rgba(255,213,79,0.2); color: #ffd54f; }
+.juz-card.read .juz-number { background: rgba(76,175,80,0.25); color: #69f0ae; }
+
+.juz-details { flex: 1; min-width: 0; }
+
+.juz-name {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #e0e0e0;
+    margin-bottom: 4px;
+}
+
+.juz-card.read .juz-name { color: #a5d6a7; }
+
+.juz-ayah-range {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    margin-bottom: 4px;
+}
+
+.ayah-start { font-size: 0.75rem; color: #80cbc4; }
+.ayah-end { font-size: 0.75rem; color: #ef9a9a; }
+.juz-card.read .ayah-start,
+.juz-card.read .ayah-end { color: #69f0ae; }
+
+.juz-surahs {
+    font-size: 0.7rem;
+    color: #777;
+    line-height: 1.4;
+    margin-bottom: 3px;
+}
+
+.juz-card.read .juz-surahs { color: #81c784; }
+.juz-card.current .juz-surahs { color: #ffe082; }
 
 .juz-status {
     font-size: 1.3rem;
+    margin-top: 2px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.juz-bookmark-badge {
+    font-size: 0.7rem;
+    color: #ffd54f;
+    margin-top: 3px;
+    display: block;
+}
+
+.juz-mini-progress {
+    width: 100%;
+    height: 3px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 2px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.juz-mini-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd54f, #4caf50);
+    border-radius: 2px;
+    transition: width 0.4s ease;
 }
 
 /* ============================================
-   ARRITJET / ACHIEVEMENTS
+   ACHIEVEMENTS
    ============================================ */
 .achievements-grid {
     display: grid;
@@ -379,56 +380,30 @@ body {
 }
 
 .achievement.locked {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
     opacity: 0.5;
 }
 
 .achievement.unlocked {
-    background: rgba(255, 213, 79, 0.1);
-    border: 1px solid rgba(255, 213, 79, 0.25);
+    background: rgba(255,213,79,0.1);
+    border: 1px solid rgba(255,213,79,0.25);
     opacity: 1;
-    animation: unlockPulse 0.5s ease;
 }
 
-@keyframes unlockPulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.05); }
-}
-
-.achievement-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 6px;
-}
-
-.achievement-name {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #ffd54f;
-    display: block;
-}
-
+.achievement-icon { font-size: 2rem; display: block; margin-bottom: 6px; }
+.achievement-name { font-size: 0.8rem; font-weight: 600; color: #ffd54f; display: block; }
 .achievement.locked .achievement-name { color: #666; }
-
-.achievement-desc {
-    font-size: 0.7rem;
-    color: #888;
-    display: block;
-    margin-top: 3px;
-}
+.achievement-desc { font-size: 0.7rem; color: #888; display: block; margin-top: 3px; }
 
 /* ============================================
-   PLANI DITOR
+   DAILY PLAN
    ============================================ */
-.daily-section {
-    max-width: 500px;
-    margin: 0 auto;
-}
+.daily-section { max-width: 500px; margin: 0 auto; }
 
 .daily-plan {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 14px;
     padding: 18px;
 }
@@ -438,33 +413,22 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .daily-item:last-child { border-bottom: none; }
-
-.daily-prayer {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.daily-task {
-    font-size: 0.8rem;
-    color: #aaa;
-}
+.daily-prayer { font-weight: 600; font-size: 0.95rem; }
+.daily-task { font-size: 0.8rem; color: #aaa; }
 
 /* ============================================
-   BUTONI I RESETIMIT
+   RESET BUTTON
    ============================================ */
-.reset-section {
-    text-align: center;
-    margin: 30px 0;
-}
+.reset-section { text-align: center; margin: 30px 0; }
 
 .reset-btn {
     padding: 10px 25px;
-    background: rgba(244, 67, 54, 0.12);
-    border: 1px solid rgba(244, 67, 54, 0.3);
+    background: rgba(244,67,54,0.12);
+    border: 1px solid rgba(244,67,54,0.3);
     color: #ef9a9a;
     border-radius: 8px;
     cursor: pointer;
@@ -472,52 +436,30 @@ body {
     transition: all 0.3s ease;
 }
 
-.reset-btn:hover {
-    background: rgba(244, 67, 54, 0.25);
-}
+.reset-btn:hover { background: rgba(244,67,54,0.25); }
 
 /* ============================================
    FOOTER
    ============================================ */
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: #555;
-    font-size: 0.8rem;
-}
-
-.footer-dua {
-    font-size: 1.2rem;
-    color: #ffd54f;
-    margin: 10px 0 5px;
-    direction: rtl;
-}
-
-.footer-translation {
-    font-size: 0.75rem;
-    color: #777;
-    font-style: italic;
-}
+.footer { text-align: center; padding: 20px; color: #555; font-size: 0.8rem; }
+.footer-dua { font-size: 1.2rem; color: #ffd54f; margin: 10px 0 5px; direction: rtl; }
+.footer-translation { font-size: 0.75rem; color: #777; font-style: italic; }
 
 /* ============================================
-   POPUP I FESTIMIT
+   CELEBRATION POPUP
    ============================================ */
 .celebration-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-.celebration-overlay.visible {
-    display: flex;
-}
+.celebration-overlay.visible { display: flex; }
 
 .celebration-content {
     text-align: center;
@@ -530,7 +472,7 @@ body {
 }
 
 @keyframes celebrationPop {
-    0%   { transform: scale(0.5); opacity: 0; }
+    0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
 
@@ -543,25 +485,15 @@ body {
 
 @keyframes celebrationBounce {
     0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-15px); }
+    50% { transform: translateY(-15px); }
 }
 
-.celebration-title {
-    color: #ffd54f;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.celebration-text {
-    color: #c8e6c9;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
+.celebration-title { color: #ffd54f; font-size: 1.4rem; margin-bottom: 10px; }
+.celebration-text { color: #c8e6c9; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px; }
 
 .celebration-close {
     padding: 10px 30px;
-    background: rgba(255, 213, 79, 0.2);
+    background: rgba(255,213,79,0.2);
     border: 1px solid #ffd54f;
     color: #ffd54f;
     border-radius: 8px;
@@ -570,59 +502,29 @@ body {
     transition: all 0.3s ease;
 }
 
-.celebration-close:hover {
-    background: rgba(255, 213, 79, 0.35);
-}
+.celebration-close:hover { background: rgba(255,213,79,0.35); }
 
 /* ============================================
-   RESPONSIVE — Ekrane të vogla
-   ============================================ */
-@media (max-width: 480px) {
-    .title { font-size: 1.4rem; }
-
-    .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stat-number { font-size: 1.2rem; }
-
-    .juz-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .achievements-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ============================================
-   BOOKMARK OVERLAY — Sfond i errët pas panelit
+   BOOKMARK OVERLAY
    ============================================ */
 .bookmark-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;                     /* Fshehur në fillim */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
     justify-content: center;
-    align-items: flex-end;             /* Paneli del nga poshtë */
+    align-items: flex-end;
     z-index: 999;
 }
 
-.bookmark-overlay.visible {
-    display: flex;
-}
+.bookmark-overlay.visible { display: flex; }
 
-/* ============================================
-   BOOKMARK PANEL — Paneli kryesor
-   ============================================ */
 .bookmark-panel {
     width: 100%;
     max-width: 500px;
-    max-height: 85vh;                  /* Mos zë gjithë ekranin */
-    overflow-y: auto;                  /* Scroll nëse është i gjatë */
+    max-height: 85vh;
+    overflow-y: auto;
     background: linear-gradient(180deg, #1a1a4e, #0a0e27);
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
@@ -631,47 +533,28 @@ body {
     animation: slideUp 0.35s ease;
 }
 
-/* Animacioni: del nga poshtë lart */
 @keyframes slideUp {
-    from {
-        transform: translateY(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-/* ============================================
-   BOOKMARK — Butoni i mbylljes (X)
-   ============================================ */
 .bookmark-close {
     position: absolute;
-    top: 15px;
-    right: 18px;
-    background: rgba(255, 255, 255, 0.1);
+    top: 15px; right: 18px;
+    background: rgba(255,255,255,0.1);
     border: none;
     color: #aaa;
     font-size: 1.2rem;
-    width: 35px;
-    height: 35px;
+    width: 35px; height: 35px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
 }
 
-.bookmark-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
+.bookmark-close:hover { background: rgba(255,255,255,0.2); color: white; }
 
-/* ============================================
-   BOOKMARK — Titulli dhe nëntitulli
-   ============================================ */
 .bookmark-title {
     color: #ffd54f;
     font-size: 1.3rem;
@@ -683,12 +566,23 @@ body {
     color: #80cbc4;
     font-size: 0.85rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    line-height: 1.5;
 }
 
-/* ============================================
-   BOOKMARK — Format (fushat e input-it)
-   ============================================ */
+/* Info e sureve brenda panelit */
+.bookmark-surahs-info {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    font-size: 0.78rem;
+    color: #aaa;
+    line-height: 1.5;
+    text-align: center;
+}
+
 .bookmark-form {
     display: flex;
     flex-direction: column;
@@ -707,12 +601,11 @@ body {
     font-weight: 600;
 }
 
-/* Fushat e tekstit dhe numrave */
 .bookmark-input {
     width: 100%;
     padding: 12px 14px;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
     border-radius: 10px;
     color: white;
     font-size: 1rem;
@@ -720,45 +613,23 @@ body {
     transition: border-color 0.3s ease;
 }
 
-.bookmark-input:focus {
-    border-color: #ffd54f;
-}
+.bookmark-input:focus { border-color: #ffd54f; }
+.bookmark-input::placeholder { color: #555; }
 
-/* Placeholder teksti */
-.bookmark-input::placeholder {
-    color: #555;
-}
-
-/* ============================================
-   BOOKMARK — Slider-i i faqeve
-   ============================================ */
 .bookmark-slider {
     width: 100%;
     height: 8px;
     -webkit-appearance: none;
     appearance: none;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     border-radius: 4px;
     outline: none;
     margin-top: 5px;
 }
 
-/* Butoni i slider-it (Chrome/Safari) */
 .bookmark-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    appearance: none;
-    width: 24px;
-    height: 24px;
-    background: #ffd54f;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #1a1a4e;
-}
-
-/* Butoni i slider-it (Firefox) */
-.bookmark-slider::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
+    width: 24px; height: 24px;
     background: #ffd54f;
     border-radius: 50%;
     cursor: pointer;
@@ -773,9 +644,6 @@ body {
     margin-top: 3px;
 }
 
-/* ============================================
-   BOOKMARK — Butonat e veprimit
-   ============================================ */
 .bookmark-actions {
     display: flex;
     flex-direction: column;
@@ -794,100 +662,49 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Butoni: Ruaj */
 .btn-save {
-    background: rgba(255, 213, 79, 0.12);
-    border-color: rgba(255, 213, 79, 0.3);
+    background: rgba(255,213,79,0.12);
+    border-color: rgba(255,213,79,0.3);
     color: #ffd54f;
 }
 
-.btn-save:hover {
-    background: rgba(255, 213, 79, 0.25);
-}
-
-/* Butoni: Duke lexuar */
 .btn-reading {
-    background: rgba(255, 152, 0, 0.12);
-    border-color: rgba(255, 152, 0, 0.3);
+    background: rgba(255,152,0,0.12);
+    border-color: rgba(255,152,0,0.3);
     color: #ffb74d;
 }
 
-.btn-reading:hover {
-    background: rgba(255, 152, 0, 0.25);
-}
-
-/* Butoni: Përfundova */
 .btn-done {
-    background: rgba(76, 175, 80, 0.12);
-    border-color: rgba(76, 175, 80, 0.3);
+    background: rgba(76,175,80,0.12);
+    border-color: rgba(76,175,80,0.3);
     color: #81c784;
 }
 
-.btn-done:hover {
-    background: rgba(76, 175, 80, 0.25);
-}
+.btn-save:hover { background: rgba(255,213,79,0.25); }
+.btn-reading:hover { background: rgba(255,152,0,0.25); }
+.btn-done:hover { background: rgba(76,175,80,0.25); }
 
-/* ============================================
-   BOOKMARK — Shënimi i ruajtur (poshtë butonave)
-   ============================================ */
 .bookmark-saved {
     margin-top: 15px;
     padding: 12px;
-    background: rgba(76, 175, 80, 0.08);
-    border: 1px solid rgba(76, 175, 80, 0.15);
+    background: rgba(76,175,80,0.08);
+    border: 1px solid rgba(76,175,80,0.15);
     border-radius: 10px;
-    display: none;                     /* Fshehur derisa ka shënim */
+    display: none;
 }
 
-.bookmark-saved.visible {
-    display: block;
-}
-
-.bookmark-saved-title {
-    font-size: 0.75rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-}
-
-.bookmark-saved-info {
-    font-size: 0.9rem;
-    color: #c8e6c9;
-    line-height: 1.5;
-}
-
-.bookmark-saved-date {
-    font-size: 0.72rem;
-    color: #666;
-    margin-top: 5px;
-}
+.bookmark-saved.visible { display: block; }
+.bookmark-saved-title { font-size: 0.75rem; color: #888; text-transform: uppercase; margin-bottom: 6px; }
+.bookmark-saved-info { font-size: 0.9rem; color: #c8e6c9; line-height: 1.5; }
+.bookmark-saved-date { font-size: 0.72rem; color: #666; margin-top: 5px; }
 
 /* ============================================
-   JUZ CARD — Shënimi i vogël në kartë
+   RESPONSIVE
    ============================================ */
-.juz-bookmark-badge {
-    font-size: 0.7rem;
-    color: #ffd54f;
-    margin-top: 3px;
-    display: block;
-}
-
-/* ============================================
-   MINI PROGRESS NË KARTË
-   ============================================ */
-.juz-mini-progress {
-    width: 100%;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 2px;
-    margin-top: 5px;
-    overflow: hidden;
-}
-
-.juz-mini-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ffd54f, #4caf50);
-    border-radius: 2px;
-    transition: width 0.4s ease;
+@media (max-width: 480px) {
+    .title { font-size: 1.4rem; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-number { font-size: 1.2rem; }
+    .juz-grid { grid-template-columns: 1fr; }
+    .achievements-grid { grid-template-columns: repeat(2, 1fr); }
 }
